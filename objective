@@ -1,0 +1,31 @@
+Listing Job Software Engineering
+- Front-End Dev
+- Back-End Dev
+- Full-Stack Dev (Web Dev)
+- Dev Ops
+- Mobile-Dev
+- Security Engineer
+- Other
+
+How to scrap
+
+1. Get list Job Element /page : '.jobs-search__results-list' 
+2. Simpan dlm Struktur Object list (Raw Data)
+   {
+     'job' : string, => '.base-search-card__title'.innerText
+     'company' : string => '.hidden-nested-link'.innerText
+     'address' : string => '.job-search-card__location'.innerText
+     'date' : string => '.job-search-card__listdate'.getAttribute('datetime')
+   }
+
+3. Data Cleansing // tahap 1
+   => Replace value 'job' dg list job yg tersedia
+   => Hapus detail selain job di title (spt; internship, company)
+   => Mapping address menjadi object
+      {
+        'country' : string // wajib
+        'province' :  string // wajib
+        'city' : string | null // opsional
+      }
+   => Parsing type prop 'date' menjadi Datetime
+
