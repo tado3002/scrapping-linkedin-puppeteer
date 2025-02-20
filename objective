@@ -27,5 +27,10 @@ How to scrap
         'province' :  string // wajib
         'city' : string | null // opsional
       }
+      split address by (,) -> tentukan len
+      len - 3 : city, province, country 
+          - 2 : city, province | province, country
+          - 1 : city | province | country 
+
    => Parsing type prop 'date' menjadi Datetime
 
